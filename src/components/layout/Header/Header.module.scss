@@ -1,0 +1,23 @@
+@import '../../../styles/settings.scss';
+
+.link a {
+  text-decoration: none;
+  color: $font-color-main;
+}
+
+.logo {
+  color: $font-color-main;
+}
+
+.badge {
+  color: $font-color-main;
+}
+
+.menu {
+  border: none;
+  box-shadow: none;
+
+  .toolbar {
+    background: white;
+  }
+}
