@@ -6,23 +6,27 @@ import Button from '@mui/material/Button';
 
 // import clsx from "clsx";
 import styles from './Homepage.module.scss';
+import { Products } from '../../features/Products/Products';
 
 const Component = () => (
-  <Container maxWidth="xl" className={styles.baner}>
-    <img
-      src={
-        'https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
-      }
-      alt="e-shop-baner"
-    ></img>
-    <div className={styles.splash}>
-      <Typography className={styles.slogan} variant="h3">
-        Watch how your time flows!
-      </Typography>
-      <Button className={styles.button} variant="contained">
-        Browse
-      </Button>
+  <Container maxWidth="xl">
+    <div className={styles.baner}>
+      <img
+        src={
+          'https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+        }
+        alt="e-shop-baner"
+      ></img>
+      <div className={styles.splash}>
+        <Typography className={styles.slogan} variant="h3">
+          Watch how your time flows!
+        </Typography>
+        <Button className={styles.button} variant="contained">
+          Browse
+        </Button>
+      </div>
     </div>
+    <Products />
   </Container>
 );
 

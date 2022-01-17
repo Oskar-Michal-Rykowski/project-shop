@@ -14,10 +14,11 @@
 }
 
 .menu {
-  border: none;
-  box-shadow: none;
+  header {
+    box-shadow: none;
+  }
 
   .toolbar {
-    background: white;
+    background: $light-color;
   }
 }

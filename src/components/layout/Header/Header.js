@@ -48,8 +48,8 @@ const Component = () => {
   };
 
   return (
-    <Container maxWidth="xl">
-      <AppBar className={styles.menu} position="static">
+    <Container className={styles.menu} maxWidth="xl">
+      <AppBar position="static">
         <Toolbar className={styles.toolbar} disableGutters>
           <Typography
             variant="h6"
