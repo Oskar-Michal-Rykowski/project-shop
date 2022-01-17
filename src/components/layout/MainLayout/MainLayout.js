@@ -7,7 +7,6 @@ import { Header } from '../Header/Header';
 const Component = ({ className, children }) => (
   <div>
     <Header />
-    <h1>MainLayout</h1>
     {children}
   </div>
 );

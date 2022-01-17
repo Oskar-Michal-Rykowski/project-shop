@@ -1,12 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
 // import clsx from "clsx";
-// import styles from "./Header.module.scss";
+import styles from './Homepage.module.scss';
 
 const Component = () => (
-  <div>
-    <h1>Homepage</h1>
-  </div>
+  <Container maxWidth="xl" className={styles.baner}>
+    <img
+      src={
+        'https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'
+      }
+      alt="e-shop-baner"
+    ></img>
+    <div className={styles.splash}>
+      <Typography className={styles.slogan} variant="h3">
+        Watch how your time flows!
+      </Typography>
+      <Button className={styles.button} variant="contained">
+        Browse
+      </Button>
+    </div>
+  </Container>
 );
 
 Component.propTypes = {
