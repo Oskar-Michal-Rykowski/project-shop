@@ -21,6 +21,7 @@ import { CardActionArea } from '@mui/material';
 // import Tooltip from '@mui/material/Tooltip';
 // import Avatar from '@mui/material/Avatar';
 import styles from './Products.module.scss';
+import { ProductBox } from '../ProductBox/ProductBox';
 
 const Component = () => {
   return (
@@ -29,114 +30,9 @@ const Component = () => {
         Products
       </Typography>
       <div className={styles.products}>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={styles.product}>
-          <CardActionArea>
-            <CardMedia
-              className={styles.photo}
-              component="img"
-              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                PLN 145
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+        {[1, 2, 3, 4, 5, 6].map((product) => (
+          <ProductBox key={product} />
+        ))}
       </div>
     </Container>
   );

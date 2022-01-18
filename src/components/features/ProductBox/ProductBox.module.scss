@@ -1,0 +1,10 @@
+@import '../../../styles/settings.scss';
+
+.product {
+  margin: 10px;
+  width: 360px;
+  height: 500px;
+  .photo {
+    height: 400px;
+  }
+}
