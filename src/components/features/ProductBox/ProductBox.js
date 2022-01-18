@@ -5,27 +5,39 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
+import { Link } from 'react-router-dom';
 import styles from './ProductBox.module.scss';
 
 const Component = ({ name, price, photo, id }) => {
   return (
     <Card id={id} className={styles.product}>
-      <CardActionArea>
-        <CardMedia
-          className={styles.photo}
-          component="img"
-          image={photo}
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {name}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            PLN {price}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+      <Link to={`products/${id}`}>
+        <CardActionArea>
+          <CardMedia
+            className={styles.photo}
+            component="img"
+            image={photo}
+            alt="green iguana"
+          />
+          <CardContent className={styles.content}>
+            <Typography
+              className={styles.name}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              {name}
+            </Typography>
+            <Typography
+              className={styles.price}
+              variant="body2"
+              color="text.secondary"
+            >
+              PLN {price}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Link>
     </Card>
   );
 };

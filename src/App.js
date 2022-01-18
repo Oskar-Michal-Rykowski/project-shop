@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { store } from './redux/store';
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
+import { Product } from './components/views/Product/Product';
 
 const theme = createTheme({
   palette: {
@@ -24,6 +25,7 @@ const App = () => (
           <MainLayout>
             <Routes>
               <Route exact path="/" element={<Homepage />} />
+              <Route exact path="/products/:id" element={<Product />} />
               {/* <Route exact path="/login" component={Homepage} />
               <Route exact path="/post/add" component={PostAdd} />
               <Route exact path="/post/:id" component={Post} />
