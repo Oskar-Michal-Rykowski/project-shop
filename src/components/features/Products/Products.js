@@ -29,11 +29,11 @@ const Component = () => {
         Products
       </Typography>
       <div className={styles.products}>
-        <Card className={styles.product} sx={{ maxWidth: 345 }}>
+        <Card className={styles.product}>
           <CardActionArea>
             <CardMedia
+              className={styles.photo}
               component="img"
-              height="140"
               image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               alt="green iguana"
             />
@@ -42,17 +42,16 @@ const Component = () => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                PLN 145
               </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card className={styles.product} sx={{ maxWidth: 345 }}>
+        <Card className={styles.product}>
           <CardActionArea>
             <CardMedia
+              className={styles.photo}
               component="img"
-              height="140"
               image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               alt="green iguana"
             />
@@ -61,17 +60,16 @@ const Component = () => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                PLN 145
               </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card className={styles.product} sx={{ maxWidth: 345 }}>
+        <Card className={styles.product}>
           <CardActionArea>
             <CardMedia
+              className={styles.photo}
               component="img"
-              height="140"
               image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               alt="green iguana"
             />
@@ -80,17 +78,16 @@ const Component = () => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                PLN 145
               </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card className={styles.product} sx={{ maxWidth: 345 }}>
+        <Card className={styles.product}>
           <CardActionArea>
             <CardMedia
+              className={styles.photo}
               component="img"
-              height="140"
               image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               alt="green iguana"
             />
@@ -99,17 +96,16 @@ const Component = () => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                PLN 145
               </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-        <Card className={styles.product} sx={{ maxWidth: 345 }}>
+        <Card className={styles.product}>
           <CardActionArea>
             <CardMedia
+              className={styles.photo}
               component="img"
-              height="140"
               image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
               alt="green iguana"
             />
@@ -118,8 +114,25 @@ const Component = () => {
                 Lizard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+                PLN 145
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+        <Card className={styles.product}>
+          <CardActionArea>
+            <CardMedia
+              className={styles.photo}
+              component="img"
+              image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+              alt="green iguana"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Lizard
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                PLN 145
               </Typography>
             </CardContent>
           </CardActionArea>
