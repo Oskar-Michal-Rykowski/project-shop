@@ -7,22 +7,22 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import styles from './ProductBox.module.scss';
 
-const Component = () => {
+const Component = ({ name, price, photo, id }) => {
   return (
-    <Card className={styles.product}>
+    <Card id={id} className={styles.product}>
       <CardActionArea>
         <CardMedia
           className={styles.photo}
           component="img"
-          image="https://images.pexels.com/photos/2860807/pexels-photo-2860807.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          image={photo}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            PLN 145
+            PLN {price}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -22,24 +22,42 @@ import { CardActionArea } from '@mui/material';
 // import Avatar from '@mui/material/Avatar';
 import styles from './Products.module.scss';
 import { ProductBox } from '../ProductBox/ProductBox';
+import { connect } from 'react-redux';
+import { getProducts } from '../../../redux/productsRedux';
 
-const Component = () => {
+const Component = ({ products }) => {
   return (
     <Container className={styles.root}>
       <Typography className={styles.title} variant="h4">
         Products
       </Typography>
       <div className={styles.products}>
-        {[1, 2, 3, 4, 5, 6].map((product) => (
-          <ProductBox key={product} />
+        {products.map((product) => (
+          <ProductBox
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            price={product.price}
+            photo={product.photo}
+          />
         ))}
       </div>
     </Container>
   );
 };
 Component.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+  products: PropTypes.array,
 };
 
-export { Component as Products, Component as ProductsComponent };
+const mapStateToProps = (state) => ({
+  products: getProducts(state),
+});
+
+const mapDispatchToProps = () => ({});
+
+const ProductsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Component);
+
+export { ProductsContainer as Products, Component as ProductsComponent };
