@@ -14,6 +14,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
 // import Tooltip from '@mui/material/Tooltip';
 // import Avatar from '@mui/material/Avatar';
 import styles from './Header.module.scss';
@@ -45,6 +46,24 @@ const Component = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
   };
 
   return (
@@ -121,15 +140,25 @@ const Component = () => {
           </Box>
 
           <Box sx={{ display: { md: 'flex' } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge className={styles.badge} badgeContent={4} color="error">
-                <Icon baseClassName="fas" className="fa-shopping-cart" />{' '}
-              </Badge>
-            </IconButton>
+            <React.Fragment key={'right'}>
+              <IconButton
+                onClick={toggleDrawer('right', true)}
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                <Badge className={styles.badge} badgeContent={4} color="error">
+                  <Icon baseClassName="fas" className="fa-shopping-cart" />{' '}
+                </Badge>
+              </IconButton>
+              <Drawer
+                anchor={'right'}
+                open={state['right']}
+                onClose={toggleDrawer('right', false)}
+              >
+                <h1>Blabla</h1>
+              </Drawer>
+            </React.Fragment>
           </Box>
         </Toolbar>
       </AppBar>
