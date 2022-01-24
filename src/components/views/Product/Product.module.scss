@@ -1,5 +1,29 @@
 @import '../../../styles/settings.scss';
 
+.baner {
+  height: 50px;
+  position: relative;
+  background: rgb(224, 224, 224);
+  border-radius: 5px;
+
+  .splash {
+    position: absolute;
+    width: 50%;
+    margin: auto;
+    top: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $font-color-main;
+    font-size: 10px;
+    .price {
+      font-weight: bolder;
+      color: $brand-color;
+    }
+  }
+}
+
 .product {
   margin: 10px;
   width: 360px;
