@@ -24,6 +24,21 @@ const Component = ({ products }) => {
           </Typography>
         </div>
       </div>
+      <div className={styles.product}>
+        <div className={styles.photos}>
+          {product.photos.map((photo) => (
+            <div className={styles.photo}>
+              <img src={photo} alt="product"></img>
+            </div>
+          ))}
+        </div>
+        <div className={styles.content}>
+          <h1>{product.name}</h1>
+          <p>{product.describtion}</p>
+
+          <h2>from {product.priceFrom} PLN</h2>
+        </div>
+      </div>
     </Container>
   );
 };

@@ -22,7 +22,7 @@ const Component = ({ products }) => {
             key={product.id}
             id={product.id}
             name={product.name}
-            price={product.price}
+            price={product.priceFrom}
             photo={product.photo}
           />
         ))}
