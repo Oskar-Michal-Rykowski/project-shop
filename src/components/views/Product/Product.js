@@ -5,6 +5,7 @@ import { getProducts } from '../../../redux/productsRedux';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import styles from './Product.module.scss';
 
 const Component = ({ products }) => {
@@ -37,6 +38,17 @@ const Component = ({ products }) => {
           <p>{product.describtion}</p>
 
           <h2>from {product.priceFrom} PLN</h2>
+          <form>
+            <TextField
+              id="outlined-multiline-static"
+              label="How do you want to personalize your product?"
+              multiline
+              className={styles.input}
+            />
+            <Button className={styles.button} variant="contained">
+              Add to cart
+            </Button>
+          </form>
         </div>
       </div>
     </Container>
