@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getProducts } from '../../../redux/productsRedux';
@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ImgsViewer from 'react-images-viewer';
 import styles from './Product.module.scss';
 
 const Component = ({ products }) => {
@@ -26,9 +27,22 @@ const Component = ({ products }) => {
         </div>
       </div>
       <div className={styles.product}>
+        {/* <ImgsViewer
+          imgs={product.photos.map((photo) => [{ src: photo }])}
+          imgs={[
+            {
+              src: 'https://images.pexels.com/photos/9109343/pexels-photo-9109343.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            },
+          ]}
+          currImg={0}
+          isOpen={true}
+          onClickPrev={this.gotoPrevious}
+          onClickNext={this.gotoNext}
+          onClose={true}
+        /> */}
         <div className={styles.photos}>
           {product.photos.map((photo) => (
-            <div className={styles.photo}>
+            <div key={photo} className={styles.photo}>
               <img src={photo} alt="product"></img>
             </div>
           ))}
@@ -56,7 +70,7 @@ const Component = ({ products }) => {
 };
 
 Component.propTypes = {
-  products: PropTypes.object,
+  products: PropTypes.array,
 };
 
 // Dlaczego ownProps.match.params.id nie działa?
