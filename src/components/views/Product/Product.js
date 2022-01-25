@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ImgsViewer from 'react-images-viewer';
 import styles from './Product.module.scss';
+import { AmountWidget } from '../../features/AmountWidget/AmountWidget';
 
 const Component = ({ products }) => {
   console.log('product', products);
@@ -50,7 +51,7 @@ const Component = ({ products }) => {
         <div className={styles.content}>
           <h1>{product.name}</h1>
           <p>{product.describtion}</p>
-
+          <AmountWidget amount={2} />
           <h2>from {product.priceFrom} PLN</h2>
           <form>
             <TextField
