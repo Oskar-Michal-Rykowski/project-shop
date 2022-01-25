@@ -5,14 +5,14 @@ export const initialState = {
       clientInput:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       amount: 1,
-      price: 145,
+      priceSingle: 145,
     },
     {
       name: 'Product 2',
       clientInput:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
       amount: 3,
-      price: 123,
+      priceSingle: 123,
     },
   ],
   products: [

@@ -20,6 +20,7 @@ import Drawer from '@mui/material/Drawer';
 import styles from './Header.module.scss';
 import { connect } from 'react-redux';
 import { getCart } from '../../../redux/cartRedux';
+import { Cart } from '../../features/Cart/Cart';
 
 const Component = ({ cart }) => {
   console.log('cart', cart);
@@ -163,7 +164,9 @@ const Component = ({ cart }) => {
                 open={state['right']}
                 onClose={toggleDrawer('right', false)}
               >
-                <h1>Blabla</h1>
+                <div className={styles.drawer}>
+                  <Cart />
+                </div>
               </Drawer>
             </React.Fragment>
           </Box>

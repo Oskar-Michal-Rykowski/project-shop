@@ -1,45 +1,12 @@
 @import '../../../styles/settings.scss';
 
-// .link a {
-//   text-decoration: none;
-//   color: $font-color-main;
-// }
-
-.root {
-  max-width: 80%;
-  padding: 0;
-}
-
-.title {
+.cart {
   margin: 10px 0;
-  color: $font-color-main;
+  .input {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .amount {
+    margin: 10px 0;
+  }
 }
-
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  width: fit-content;
-  justify-content: center;
-  // .product {
-  //   margin: 10px;
-  //   width: 370px;
-  //   height: 500px;
-  //   .photo {
-  //     height: 400px;
-  //   }
-  // }
-}
-
-// .badge {
-//   color: $font-color-main;
-// }
-
-// .menu {
-//   border: none;
-//   box-shadow: none;
-
-//   .toolbar {
-//     background: white;
-//   }
-// }

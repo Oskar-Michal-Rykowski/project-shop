@@ -1,41 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { connect } from 'react-redux';
+import { getCart } from '../../../redux/cartRedux';
+import { Container } from '@mui/material';
+import { AmountWidget } from '../AmountWidget/AmountWidget';
+import TextField from '@mui/material/TextField';
+import styles from './Cart.module.scss';
 
-const Component = ({ amount }) => {
-  const [number, setAmount] = React.useState(amount);
-
-  const handleChange = (event) => {
-    setAmount(event.target.value);
-  };
-
+const Component = ({ amount, cart }) => {
   return (
-    <FormControl fullWidth>
-      <InputLabel id="demo-simple-select-label">Amount</InputLabel>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={number}
-        label="Amount"
-        onChange={handleChange}
-      >
-        <MenuItem value={1}>1</MenuItem>
-        <MenuItem value={2}>2</MenuItem>
-        <MenuItem value={3}>3</MenuItem>
-      </Select>
-    </FormControl>
+    <Container>
+      <h1>Cart</h1>
+      {cart.map((order) => (
+        <Card className={styles.cart}>
+          <CardContent>
+            <Typography variant="h5" component="div">
+              {order.name}
+            </Typography>
+            <TextField
+              className={styles.input}
+              id="outlined-multiline-static"
+              label="How do you want to personalize your product?"
+              defaultValue={order.clientInput}
+              multiline
+            />
+            <div className={styles.amount}>
+              <AmountWidget amount={order.amount} />
+            </div>
+            <Typography className={styles.price} variant="h6" component="div">
+              from {order.priceSingle} PLN
+            </Typography>
+          </CardContent>
+        </Card>
+      ))}
+    </Container>
   );
 };
 Component.propTypes = {
   amount: PropTypes.number,
+  cart: PropTypes.array,
 };
 
 const mapStateToProps = (state) => ({
-  // products: getProducts(state),
+  cart: getCart(state),
 });
 
 const mapDispatchToProps = () => ({});
