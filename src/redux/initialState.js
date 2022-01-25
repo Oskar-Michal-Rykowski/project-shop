@@ -1,4 +1,20 @@
 export const initialState = {
+  cart: [
+    {
+      name: 'Product 1',
+      clientInput:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
+      amount: 1,
+      price: 145,
+    },
+    {
+      name: 'Product 2',
+      clientInput:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
+      amount: 3,
+      price: 123,
+    },
+  ],
   products: [
     {
       id: '1',

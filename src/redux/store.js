@@ -4,9 +4,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { initialState } from './initialState';
 import { reducer as productsReducer } from './productsRedux';
+import { reducer as cartReducer } from './cartRedux';
 
 // define reducers
-const reducers = { products: productsReducer };
+const reducers = { products: productsReducer, cart: cartReducer };
 
 // add blank reducers for initial state properties without reducers
 Object.keys(initialState).forEach((item) => {

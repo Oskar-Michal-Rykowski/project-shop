@@ -18,8 +18,11 @@ import Drawer from '@mui/material/Drawer';
 // import Tooltip from '@mui/material/Tooltip';
 // import Avatar from '@mui/material/Avatar';
 import styles from './Header.module.scss';
+import { connect } from 'react-redux';
+import { getCart } from '../../../redux/cartRedux';
 
-const Component = () => {
+const Component = ({ cart }) => {
+  console.log('cart', cart);
   React.useEffect(() => {
     const node = loadCSS(
       'https://use.fontawesome.com/releases/v5.14.0/css/all.css',
@@ -147,7 +150,11 @@ const Component = () => {
                 aria-label="show 4 new mails"
                 color="inherit"
               >
-                <Badge className={styles.badge} badgeContent={4} color="error">
+                <Badge
+                  className={styles.badge}
+                  badgeContent={cart.length}
+                  color="error"
+                >
                   <Icon baseClassName="fas" className="fa-shopping-cart" />{' '}
                 </Badge>
               </IconButton>
@@ -168,6 +175,15 @@ const Component = () => {
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  cart: PropTypes.array,
 };
 
-export { Component as Header, Component as HeaderComponent };
+const mapStateToProps = (state) => ({
+  cart: getCart(state),
+});
+
+const mapDispatchToProps = () => ({});
+
+const CartContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
+
+export { CartContainer as Header, Component as HeaderComponent };
