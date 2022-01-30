@@ -76,16 +76,11 @@ Component.propTypes = {
 
 // Dlaczego ownProps.match.params.id nie działa?
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    products: getProducts(state),
-  };
-};
+const mapStateToProps = (state) => ({
+  products: getProducts(state),
+});
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  // console.log('ownProps 2', ownProps.match.params.id);
-  return {};
-};
+const mapDispatchToProps = (dispatch, ownProps) => {};
 
 const ProductContainer = connect(
   mapStateToProps,
