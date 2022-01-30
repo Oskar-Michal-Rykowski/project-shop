@@ -15,6 +15,7 @@ export const initialState = {
       priceSingle: 123,
     },
   ],
+  products: [],
   // products: [
   //   {
   //     id: '1',

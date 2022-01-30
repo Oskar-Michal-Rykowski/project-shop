@@ -15,7 +15,7 @@ const Component = ({ products }) => {
 
   const url = window.location.href;
   const id = url.substring(url.lastIndexOf('/') + 1);
-  const product = products.find((product) => product.id === id);
+  const product = products.find((product) => product._id === id);
   console.log('product', product);
 
   return (
