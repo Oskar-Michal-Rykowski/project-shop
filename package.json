@@ -33,9 +33,10 @@
     "web-vitals": "^2.1.3"
   },
   "scripts": {
-    "start": "run-p start:* ",
+    "start": "node backend/server.js",
     "start-silent": "run-p start > /dev/null",
     "start:react": "react-scripts start",
+    "start:server": "nodemon --watch backend backend/server.js ",
     "start-and-test": "run-p start-silent test ",
     "build": "react-scripts build",
     "test": "react-scripts test --noStackTrace",

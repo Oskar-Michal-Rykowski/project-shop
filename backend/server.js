@@ -47,7 +47,6 @@ let dbUri = '';
 
 if (NODE_ENV === 'production')
   dbUri = `mongodb+srv://${process.env.UserDB}:${process.env.PasswordDB}@cluster0.n6j0j.mongodb.net/e-shop?retryWrites=true&w=majority`;
-else if (NODE_ENV === 'test') dbUri = 'mongodb://localhost:27017/e-shop';
 else dbUri = 'mongodb://localhost:27017/e-shop';
 
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });

@@ -1,5 +1,7 @@
 import Axios from 'axios';
-
+const API_HOST =
+  process.env.NODE_ENV !== 'production' ? 'http://localhost:8000' : '/';
+console.log('APIhost', API_HOST);
 /* selectors */
 
 export const getProducts = ({ products }) => products;
@@ -24,7 +26,7 @@ export const fetchProducts = () => {
   return (dispatch, getState) => {
     try {
       // dispatch(fetchStarted());
-      Axios.get('http://localhost:8000/api/products').then((res) => {
+      Axios.get(`${API_HOST}/api/products`).then((res) => {
         dispatch(fetchSuccess(res.data));
         // console.log('RRRR', typeof res.data);
       });
