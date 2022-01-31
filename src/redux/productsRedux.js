@@ -1,6 +1,6 @@
 import Axios from 'axios';
 const API_HOST =
-  process.env.NODE_ENV !== 'production' ? 'http://localhost:8000' : '/';
+  process.env.NODE_ENV !== 'production' ? 'http://localhost:8000' : '';
 console.log('APIhost', API_HOST);
 /* selectors */
 

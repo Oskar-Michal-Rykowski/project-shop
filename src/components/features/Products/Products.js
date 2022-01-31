@@ -13,7 +13,7 @@ import { fetchProducts, getProducts } from '../../../redux/productsRedux';
 const Component = ({ products, fetchProducts }) => {
   useEffect(() => {
     fetchProducts();
-  });
+  }, []);
   // console.log('products', products);
 
   return (
