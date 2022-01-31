@@ -19,7 +19,7 @@ const Component = () => (
       ></img>
       <div className={styles.splash}>
         <Typography className={styles.slogan} variant="h3">
-          Watch how your time flows!!!
+          Watch how your time flows!!!!
         </Typography>
         <Button className={styles.button} variant="contained">
           Browse
