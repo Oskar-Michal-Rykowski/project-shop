@@ -57,7 +57,10 @@ const Component = ({ cart }) => {
     left: false,
     bottom: false,
     right: false,
+    cartLength: cart.length,
   });
+
+  console.log('cart', cart.length);
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (

@@ -13,8 +13,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { addToCart } from '../../../redux/cartRedux';
 
-const Component = ({ products }) => {
+const Component = ({ products, addToCart }) => {
   console.log('product', products);
 
   const url = window.location.href;
@@ -23,7 +24,12 @@ const Component = ({ products }) => {
   console.log('product', product);
 
   const [state, setState] = useState({
-    data: { name: product.name, amount: 1, price: product.priceFrom },
+    data: {
+      name: product.name,
+      amount: 1,
+      priceSingle: product.priceFrom,
+      price: product.priceFrom,
+    },
   });
 
   const handleAmount = (event) => {
@@ -45,7 +51,11 @@ const Component = ({ products }) => {
         clientInput: event.target.value,
       },
     });
+  };
+
+  const handleSubmit = () => {
     console.log('state', state.data);
+    addToCart(state.data);
   };
 
   return (
@@ -108,7 +118,11 @@ const Component = ({ products }) => {
               className={styles.input}
               onChange={handleText}
             />
-            <Button className={styles.button} variant="contained">
+            <Button
+              onClick={() => handleSubmit()}
+              className={styles.button}
+              variant="contained"
+            >
               Add to cart
             </Button>
           </form>
@@ -120,6 +134,7 @@ const Component = ({ products }) => {
 
 Component.propTypes = {
   products: PropTypes.array,
+  addToCart: PropTypes.func,
 };
 
 // Dlaczego ownProps.match.params.id nie działa?
@@ -128,7 +143,9 @@ const mapStateToProps = (state) => ({
   products: getProducts(state),
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {};
+const mapDispatchToProps = (dispatch) => ({
+  addToCart: (element) => dispatch(addToCart(element)),
+});
 
 const ProductContainer = connect(
   mapStateToProps,
