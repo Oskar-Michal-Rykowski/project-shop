@@ -9,6 +9,10 @@ import TextField from '@mui/material/TextField';
 import ImgsViewer from 'react-images-viewer';
 import styles from './Product.module.scss';
 import { AmountWidget } from '../../features/AmountWidget/AmountWidget';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Component = ({ products }) => {
   console.log('product', products);
@@ -17,6 +21,32 @@ const Component = ({ products }) => {
   const id = url.substring(url.lastIndexOf('/') + 1);
   const product = products.find((product) => product._id === id);
   console.log('product', product);
+
+  const [state, setState] = useState({
+    data: { name: product.name, amount: 1, price: product.priceFrom },
+  });
+
+  const handleAmount = (event) => {
+    const newPrice = event.target.value * product.priceFrom;
+    console.log('new price', newPrice);
+    setState({
+      data: {
+        ...state.data,
+        amount: event.target.value,
+        price: newPrice,
+      },
+    });
+  };
+
+  const handleText = (event) => {
+    setState({
+      data: {
+        ...state.data,
+        clientInput: event.target.value,
+      },
+    });
+    console.log('state', state.data);
+  };
 
   return (
     <Container maxWidth="xl">
@@ -51,14 +81,32 @@ const Component = ({ products }) => {
         <div className={styles.content}>
           <h1>{product.name}</h1>
           <p>{product.describtion}</p>
-          <AmountWidget amount={2} />
-          <h2>from {product.priceFrom} PLN</h2>
+          {/* <AmountWidget
+            onChange={(e) => handleAmount(e)}
+            amount={state.data.amount}
+          /> */}
+          <FormControl fullWidth>
+            <InputLabel id="demo-simple-select-label">Amount</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={state.data.amount}
+              label="Amount"
+              onChange={handleAmount}
+            >
+              <MenuItem value={1}>1</MenuItem>
+              <MenuItem value={2}>2</MenuItem>
+              <MenuItem value={3}>3</MenuItem>
+            </Select>
+          </FormControl>
+          <h2>from {state.data.price} PLN</h2>
           <form>
             <TextField
               id="outlined-multiline-static"
               label="How do you want to personalize your product?"
               multiline
               className={styles.input}
+              onChange={handleText}
             />
             <Button className={styles.button} variant="contained">
               Add to cart
