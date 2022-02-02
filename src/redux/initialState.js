@@ -1,6 +1,7 @@
 export const initialState = {
   cart: [
     {
+      id: '1',
       name: 'Product 1',
       clientInput:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',
@@ -8,6 +9,7 @@ export const initialState = {
       priceSingle: 145,
     },
     {
+      id: '2',
       name: 'Product 2',
       clientInput:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed',

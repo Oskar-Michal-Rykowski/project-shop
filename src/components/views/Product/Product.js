@@ -23,8 +23,13 @@ const Component = ({ products, addToCart }) => {
   const product = products.find((product) => product._id === id);
   console.log('product', product);
 
+  const randomNumber = () => {
+    return '_' + Math.random().toString(36);
+  };
+
   const [state, setState] = useState({
     data: {
+      id: randomNumber(),
       name: product.name,
       amount: 1,
       priceSingle: product.priceFrom,

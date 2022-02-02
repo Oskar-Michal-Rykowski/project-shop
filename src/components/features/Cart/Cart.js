@@ -6,18 +6,22 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { connect } from 'react-redux';
-import { getCart } from '../../../redux/cartRedux';
+import { getCart, removeFromCart } from '../../../redux/cartRedux';
 import { Container } from '@mui/material';
 import { AmountWidget } from '../AmountWidget/AmountWidget';
 import TextField from '@mui/material/TextField';
+import Icon from '@mui/material/Icon';
 import styles from './Cart.module.scss';
 
-const Component = ({ amount, cart }) => {
+const Component = ({ amount, cart, removeFromCart }) => {
+  const handleTrash = (id) => {
+    removeFromCart(id);
+  };
   return (
     <Container>
       <h1>Cart</h1>
       {cart.map((order) => (
-        <Card className={styles.cart}>
+        <Card key={order.id} className={styles.cart}>
           <CardContent>
             <Typography variant="h5" component="div">
               {order.name}
@@ -35,6 +39,12 @@ const Component = ({ amount, cart }) => {
             <Typography className={styles.price} variant="h6" component="div">
               from {order.priceSingle} PLN
             </Typography>
+            <Button
+              onClick={() => handleTrash(order.id)}
+              className={styles.trash}
+            >
+              <Icon baseClassName="far" className="fa-trash-alt" />
+            </Button>
           </CardContent>
         </Card>
       ))}
@@ -44,13 +54,16 @@ const Component = ({ amount, cart }) => {
 Component.propTypes = {
   amount: PropTypes.number,
   cart: PropTypes.array,
+  removeFromCart: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
   cart: getCart(state),
 });
 
-const mapDispatchToProps = () => ({});
+const mapDispatchToProps = (dispatch) => ({
+  removeFromCart: (element) => dispatch(removeFromCart(element)),
+});
 
 const CartContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
 

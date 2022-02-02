@@ -31,6 +31,10 @@ export const reducer = (statePart = [], action = {}) => {
       // console.log('dupa', statePart);
       return statePart;
     }
+    case REMOVE_FROM_CART: {
+      const newCart = statePart.filter((order) => order.id !== action.payload);
+      return newCart;
+    }
     default:
       return statePart;
   }
