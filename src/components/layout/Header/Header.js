@@ -169,6 +169,9 @@ const Component = ({ cart }) => {
               >
                 <div className={styles.drawer}>
                   <Cart />
+                  <div className={styles.summary}>
+                    <Link to={'/summary'}>Summary</Link>
+                  </div>
                 </div>
               </Drawer>
             </React.Fragment>

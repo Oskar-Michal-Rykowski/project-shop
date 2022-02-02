@@ -27,3 +27,11 @@
   width: 50vh;
   padding: 10px;
 }
+
+.summary {
+  text-align: center;
+  a {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}

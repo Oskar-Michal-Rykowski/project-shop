@@ -12,6 +12,7 @@ import { AmountWidget } from '../AmountWidget/AmountWidget';
 import TextField from '@mui/material/TextField';
 import Icon from '@mui/material/Icon';
 import styles from './Cart.module.scss';
+import { Link } from 'react-router-dom';
 
 const Component = ({ amount, cart, removeFromCart }) => {
   const handleTrash = (id) => {
